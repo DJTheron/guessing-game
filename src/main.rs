@@ -13,10 +13,10 @@ fn main() { // main function
     
     println!("Guess the number!"); // basically print on python but its got the ! which means its a rust "macro" not a normal function
     
-    let secret_number = rand::thread_rng().gen_range(1..=10); //i see no mut meaning the variable is not going to change during the program. calls on the random library and uses rng to generate no from 1 - 100 using .genrange(1..=100) method
+    let secret_number = rand::thread_rng().gen_range(1..=50); //i see no mut meaning the variable is not going to change during the program. calls on the random library and uses rng to generate no from 1 - 100 using .genrange(1..=100) method
 
     loop {
-        println!("PLease Input your guess");
+        println!("PLease Input your guess 1-50");
 
         let mut guess = String::new(); // let means basically make a variable and mut means its mutable (it can change) guess is just defining the name and string defines its a string and the new creates a blank empty string
 
@@ -29,10 +29,13 @@ fn main() { // main function
 
         println!("you guessed: {guess}"); // just prints out the user input. {} are like crab pincers to hold something in place
         
-        match guess.cmp(&secret_number) {
+        match guess.cmp(&secret_number) { // runs in "arms". guess is compared to secret number each arm
             Ordering::Less => println!("Too small!"),
             Ordering::Greater => println!("Too big!"),
-            Ordering::Equal => println!("You win!"),
+            Ordering::Equal => {
+                println!("you win!");
+                break
+            }
         }
     }
     println!("The secret number is {secret_number}")
