@@ -42,6 +42,5 @@ fn main() { // main function
                 break
             }
         }
-    }
-    println!("The secret number is {secret_number}")
+    };
 }
