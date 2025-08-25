@@ -25,7 +25,11 @@ fn main() { // main function
             .expect("failed to read line"); // error handling. notice no ";" after the readline, this is a single code thingy, just u can press enter to make it look better
             // this whole code thingy could look like io::stdin().read_line(&mut guess).expect("failed to read line");
 
-        let guess: u32 = guess.trim().parse().expect("You didnt type a number, please type one!"); // this line "shadows" the guess variable. .readline always gets a string output even it you put number. 1st og guess varible is put into .trim and then .parse. .trim removes the \n that occurs when you press enter and any spacing before/ after. .parse interconnects with the u32 in the beginning, telling rust the type of varible is going to change. finally u32 is a datatype that can only be numeric so it therefore converts to a number.
+        let guess: u32 = match guess.trim().parse() {
+            Ok(num) => num,
+            Err(_) => continue,
+        };
+ // this line "shadows" the guess variable. .readline always gets a string output even it you put number. 1st og guess varible is put into .trim and then .parse. .trim removes the \n that occurs when you press enter and any spacing before/ after. .parse interconnects with the u32 in the beginning, telling rust the type of varible is going to change. finally u32 is a datatype that can only be numeric so it therefore converts to a number.
 
         println!("you guessed: {guess}"); // just prints out the user input. {} are like crab pincers to hold something in place
         
