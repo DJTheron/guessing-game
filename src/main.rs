@@ -17,7 +17,7 @@ fn main() { // main function
     let secret_number = rand::thread_rng().gen_range(1..=50); //i see no mut meaning the variable is not going to change during the program. calls on the random library and uses rng to generate no from 1 - 100 using .genrange(1..=100) method
 
     loop {
-        println!("PLease Input your guess 1-50");
+        println!("Please input your guess 1-50");
 
         let mut guess = String::new(); // let means basically make a variable and mut means its mutable (it can change) guess is just defining the name and string defines its a string and the new creates a blank empty string
 
@@ -32,13 +32,13 @@ fn main() { // main function
         };
  // this line "shadows" the guess variable. .readline always gets a string output even it you put number. 1st og guess varible is put into .trim and then .parse. .trim removes the \n that occurs when you press enter and any spacing before/ after. .parse interconnects with the u32 in the beginning, telling rust the type of varible is going to change. finally u32 is a datatype that can only be numeric so it therefore converts to a number.
 
-        println!("you guessed: {guess}"); // just prints out the user input. {} are like crab pincers to hold something in place
+        println!("You guessed: {guess}"); // just prints out the user input. {} are like crab pincers to hold something in place
         
         match guess.cmp(&secret_number) { // runs in "arms". guess is compared to secret number each arm
             Ordering::Less => println!("Too small!"),
             Ordering::Greater => println!("Too big!"),
             Ordering::Equal => {
-                println!("you win!");
+                println!("You WIN!");
                 break
             }
         }
