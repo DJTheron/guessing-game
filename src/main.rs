@@ -4,9 +4,9 @@
 // end a function with ; if its in the main program??
 
 
-us std::io; //imports standard user io library (why does this need to be done its so simple in python)
+use std::io; //imports standard user io library (why does this need to be done its so simple in python)
 
-use std::cmp::Ordering; // added library std, the standard library. comp, probably stnads for computing. Ordering is for comparing numbers
+se std::cmp::Ordering; // added library std, the standard library. comp, probably stnads for computing. Ordering is for comparing numbers
 
 use rand::Rng; // imports random library so u can get random. Rng is apparently how it generates the random number
 
