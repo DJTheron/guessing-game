@@ -4,7 +4,7 @@
 // end a function with ; if its in the main program??
 
 
-use std::io; //imports standard user io library (why does this need to be done its so simple in python)
+us std::io; //imports standard user io library (why does this need to be done its so simple in python)
 
 use std::cmp::Ordering; // added library std, the standard library. comp, probably stnads for computing. Ordering is for comparing numbers
 
